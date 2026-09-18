@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Anniversary, My Love ❤️</title>
+    <meta name="description" content="Website Anniversary Romantis & Manis Perayaan Cinta Spesial.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Floating Canvas for Stars, Shooting Stars & Stardust -->
+    <canvas id="heartsCanvas"></canvas>
+
+    <!-- Floating Navigation Bar -->
+    <nav class="navbar">
+        <a href="#hero" class="nav-logo">
+            <i class="fa-solid fa-heart pulse-heart"></i> Anniversary
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#story">Perjalanan Kita</a></li>
+            <li><a href="#gallery">Galeri</a></li>
+            <li><a href="#letter">Surat Cinta</a></li>
+            <li><a href="#reasons">Alasan Cinta</a></li>
+            <li><a href="#coupons">Voucher Manis</a></li>
+            <li><a href="#counter">Counter Cinta</a></li>
+        </ul>
+    </nav>
+
+    <!-- Floating Music Player Widget -->
+    <div class="music-player-widget">
+        <button class="music-btn" id="musicBtn" aria-label="Play or Pause Music">
+            <i class="fa-solid fa-compact-disc"></i>
+        </button>
+        <div class="music-info">
+            <span class="music-title" id="musicTitleText">Romantic Melody</span>
+            <span class="music-status" id="musicStatusText">Klik untuk Putar 🎵</span>
+        </div>
+        <!-- Hidden Audio Element -->
+        <audio id="bgAudio" loop preload="auto">
+            <source src="public/music.mp3" type="audio/mpeg">
+            Browser Anda tidak mendukung elemen audio.
+        </audio>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <!-- 1. HERO SECTION -->
+        <section id="hero" class="hero-section">
+            <div class="hero-sparkles"></div>
+            <div class="hero-content">
+                <span class="hero-badge" id="heroBadge">✨ Hadiah Istimewa Untuk Semesta Hatiku ✨</span>
+                <h1 class="hero-title" id="heroTitle">Happy Anniversary, My Love</h1>
+                
+                <!-- Cute Romantic Polaroid Photo Frame -->
+                <div class="hero-cute-frame-wrapper" id="heroCuteFrameWrapper">
+                    <div class="cute-frame-box">
+                        <div class="cute-sticker-tape" id="heroPhotoTagText">✨ Our Favorite Moment ✨</div>
+                        <div class="cute-photo-wrapper">
+                            <img id="heroPhotoImg" src="public/photos/photo3.jpeg" alt="Hero couple photo">
+                        </div>
+                        <div class="cute-frame-heart-badge">💖</div>
+                    </div>
+                </div>
+
+                <p class="hero-message" id="heroSubtitle">Jarak terbentang tak pernah mengurangi hangatnya rasa cintaku padamu.</p>
+                <div class="hero-couple-tag" id="heroCouple">
+                    <i class="fa-solid fa-heart-circle-bolt"></i> <span id="partnerNameDisplay">Sayangku</span>
+                </div>
+                <br>
+                <a href="#story" class="btn-primary btn-romantic-glow">
+                    <span>Mulai Cerita Cinta Kita ❤️</span>
+                </a>
+            </div>
+            <a href="#story" class="scroll-down-hint">
+                <span>Usap Ke Bawah</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </a>
+        </section>
+
+        <!-- 2. OUR STORY SECTION -->
+        <section id="story" class="story-section">
+            <div class="container">
+                <div class="text-center reveal-on-scroll">
+                    <span class="section-tag">🌌 Jejak Kasih</span>
+                    <h2 class="section-title">Perjalanan Cinta Kita</h2>
+                    <p class="section-subtitle">Setiap detik bersamamu adalah untaian takdir terindah.</p>
+                </div>
+
+                <div class="timeline" id="timelineContainer">
+                    <!-- Dynamic timeline items rendered by js/app.js -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. MEMORY GALLERY SECTION -->
+        <section id="gallery" class="gallery-section">
+            <div class="container">
+                <div class="text-center reveal-on-scroll">
+                    <span class="section-tag">📸 Potret Bahagia</span>
+                    <h2 class="section-title">Memory Gallery</h2>
+                    <p class="section-subtitle">Kumpulan senyuman manis dan momen hangat yang kuabadikan di hatiku.</p>
+                </div>
+
+                <div class="gallery-grid" id="galleryGrid">
+                    <!-- Dynamic photo grid items rendered by js/app.js -->
+                </div>
+            </div>
+        </section>
+
+        <!-- LIGHTBOX MODAL FOR GALLERY -->
+        <div class="lightbox-modal" id="lightboxModal" role="dialog" aria-hidden="true">
+            <div class="lightbox-content">
+                <button class="lightbox-close" id="lightboxClose" aria-label="Close modal"><i class="fa-solid fa-xmark"></i></button>
+                <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous photo"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="lightbox-next" id="lightboxNext" aria-label="Next photo"><i class="fa-solid fa-chevron-right"></i></button>
+                
+                <div class="lightbox-img-wrapper">
+                    <img id="lightboxImg" src="" alt="Enlarged memory photo">
+                </div>
+                <div class="lightbox-caption" id="lightboxCaption"></div>
+            </div>
+        </div>
+
+        <!-- 4. LOVE LETTER SECTION WITH ANIMATED 3D ENVELOPE -->
+        <section id="letter" class="letter-section">
+            <div class="container">
+                <div class="text-center reveal-on-scroll">
+                    <span class="section-tag">💌 Untaian Kata Hati</span>
+                    <h2 class="section-title">Surat Cinta Untukmu</h2>
+                    <p class="section-subtitle">Tekan segel lilin di amplop di bawah ini untuk membukanya.</p>
+                </div>
+
+                <!-- Realistic 3D Interactive Envelope -->
+                <div class="envelope-3d-wrapper reveal-on-scroll" id="envelope3DWrapper">
+                    <div class="envelope-box" id="envelopeBox">
+                        <!-- Top Triangular Flap -->
+                        <div class="envelope-flap-top" id="envelopeFlap"></div>
+                        <!-- Paper Letter Preview Inside -->
+                        <div class="envelope-paper-peek" id="envelopePaperPeek">
+                            <div class="mini-letter-header">💌 For My Love</div>
+                            <div class="mini-letter-lines"></div>
+                        </div>
+                        <!-- Envelope Front Body -->
+                        <div class="envelope-front"></div>
+                        <!-- Wax Seal Heart -->
+                        <div class="wax-seal-btn" id="waxSealBtn">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="envelope-hint-text" id="envelopeHintText">
+                        <i class="fa-solid fa-hand-pointer"></i> Klik segel lilin emas untuk membuka surat ❤️
+                    </div>
+                </div>
+
+                <!-- Unfolded Full Letter Card Paper -->
+                <div class="letter-card" id="letterCard">
+                    <div class="wax-stamp">💖</div>
+                    <div class="letter-header" id="letterGreeting">Untuk Kamu,</div>
+                    <div class="letter-body" id="letterBody">
+                        <!-- Dynamic paragraphs rendered by js/app.js -->
+                    </div>
+                    <div class="letter-footer">
+                        <div class="letter-closing" id="letterClosing">Selamat Anniversary, Sayang.</div>
+                        <div class="letter-signature" id="letterSignature">I love you, always & forever ❤️</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. REASONS WHY I LOVE YOU SECTION -->
+        <section id="reasons" class="reasons-section">
+            <div class="container">
+                <div class="text-center reveal-on-scroll">
+                    <span class="section-tag">💖 Sejuta Alasan</span>
+                    <h2 class="section-title">Reasons Why I Love You</h2>
+                    <p class="section-subtitle">Inilah beberapa hal manis yang selalu membuatku jatuh cinta padamu setiap hari.</p>
+                </div>
+
+                <div class="reasons-grid" id="reasonsGrid">
+                    <!-- Dynamic reason cards rendered by js/app.js -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. SWEET LOVE COUPONS SECTION -->
+        <section id="coupons" class="coupons-section">
+            <div class="container">
+                <div class="text-center reveal-on-scroll">
+                    <span class="section-tag">🎁 Hadiah Spesial</span>
+                    <h2 class="section-title">Voucher Cinta Manis</h2>
+                    <p class="section-subtitle">Voucher romantis ini bisa kamu tukarkan kapan saja padaku! ❤️</p>
+                </div>
+
+                <div class="coupons-grid" id="couponsGrid">
+                    <!-- Dynamic love coupons rendered by js/app.js -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. FAVORITE MOMENTS CAROUSEL SECTION -->
+        <section id="carousel" class="carousel-section">
+            <div class="container">
+                <div class="text-center reveal-on-scroll">
+                    <span class="section-tag">✨ Slide Momen</span>
+                    <h2 class="section-title">Momen Favorit Kita</h2>
+                    <p class="section-subtitle">Geser layar di Smartphone atau tekan panah untuk memutar slide kenangan.</p>
+                </div>
+
+                <div class="carousel-container reveal-on-scroll">
+                    <button class="carousel-arrow prev" id="carouselPrev" aria-label="Previous slide"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="carousel-arrow next" id="carouselNext" aria-label="Next slide"><i class="fa-solid fa-chevron-right"></i></button>
+                    
+                    <div class="carousel-track" id="carouselTrack">
+                        <!-- Dynamic carousel slides rendered by js/app.js -->
+                    </div>
+                </div>
+                <div class="carousel-dots" id="carouselDots">
+                    <!-- Dynamic dots rendered by js/app.js -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. ANNIVERSARY REAL-TIME COUNTER -->
+        <section id="counter" class="counter-section">
+            <div class="container">
+                <span class="section-tag">⏳ Real-Time Timer Cinta</span>
+                <h2 class="section-title">Together Since</h2>
+                <p class="section-subtitle" id="counterDateSubtitle">15 September 2023</p>
+
+                <div class="counter-grid">
+                    <div class="counter-card reveal-on-scroll">
+                        <div class="counter-value" id="countYears">0</div>
+                        <div class="counter-label">Years</div>
+                    </div>
+                    <div class="counter-card reveal-on-scroll">
+                        <div class="counter-value" id="countMonths">0</div>
+                        <div class="counter-label">Months</div>
+                    </div>
+                    <div class="counter-card reveal-on-scroll">
+                        <div class="counter-value" id="countDays">0</div>
+                        <div class="counter-label">Days</div>
+                    </div>
+                    <div class="counter-card reveal-on-scroll">
+                        <div class="counter-value" id="countHours">0</div>
+                        <div class="counter-label">Hours</div>
+                    </div>
+                    <div class="counter-card reveal-on-scroll">
+                        <div class="counter-value" id="countMinutes">0</div>
+                        <div class="counter-label">Minutes</div>
+                    </div>
+                    <div class="counter-card reveal-on-scroll">
+                        <div class="counter-value" id="countSeconds">0</div>
+                        <div class="counter-label">Seconds</div>
+                    </div>
+                </div>
+
+                <p class="counter-footer-text">Dan setiap detiknya terasa indah karena ada kamu ❤️</p>
+            </div>
+        </section>
+
+        <!-- 9. FINAL SURPRISE MESSAGE SECTION -->
+        <section id="final" class="final-section">
+            <div class="container reveal-on-scroll">
+                <div class="final-heart-icon">❤️</div>
+                <h2 class="final-quote" id="finalQuote">
+                    "Jika aku diberi kesempatan untuk mengulang semuanya dari awal, aku tetap akan memilih kamu tanpa ragu."
+                </h2>
+                <div class="final-signature" id="finalSignature">
+                    Happy Anniversary, Sayangku ❤️
+                </div>
+                <div>
+                    <button class="btn-love-burst" id="loveBurstBtn">
+                        <i class="fa-solid fa-heart-pulse"></i> Kirim Cinta & Kejutan Manis ❤️
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- SURPRISE POPUP MODAL -->
+    <div class="surprise-modal" id="surpriseModal">
+        <div class="surprise-card">
+            <button class="surprise-close" id="surpriseClose">&times;</button>
+            <div class="surprise-heart">💖</div>
+            <h3 class="surprise-title">Kejutan Manis Untukmu!</h3>
+            <p class="surprise-body" id="surpriseBody">
+                Terima kasih sudah menjadi pasangan, sahabat, dan cinta sejatiku. Hari ini dan selamanya, aku milikmu! ❤️
+            </p>
+            <button class="btn-primary" id="surpriseOkBtn">I Love You Too! 💕</button>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>Dibuat dengan Sepenuh Hati ❤️ Untuk <span id="footerPartnerName">Sayangku</span> &bull; <span id="currentYear">2026</span></p>
+        </div>
+    </footer>
+
+    <!-- Configuration Data -->
+    <script src="js/config.js"></script>
+    <!-- Application Logic -->
+    <script src="js/app.js"></script>
+</body>
+</html>
