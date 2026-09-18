@@ -16,7 +16,7 @@ const CONFIG = {
     heroSubtitle: "Jarak terbentang tak pernah mengurangi hangatnya rasa cintaku padamu.",
 
     // Foto Utama di Hero Section (Bingkai Lucu & Romantis)
-    heroPhoto: "public/photos/photo3.jpeg",
+    heroPhoto: "assets/photos/photo3.jpeg",
     heroPhotoTag: "Us & Forever ❤️",
 
     // Format Tanggal Jadian: YYYY-MM-DDTHH:mm:ss
@@ -24,7 +24,7 @@ const CONFIG = {
 
     // 2. MUSIK
     // ----------------------------------------------------------------
-    musicPath: "public/music.mp3",
+    musicPath: "assets/music.mp3",
     musicTitle: "A Thousand Years - Special Romantic Melody",
 
     // 3. STORY TIMELINE (Konsep Pejuang LDR & Perjalanan Jarak)
@@ -64,47 +64,47 @@ const CONFIG = {
     // ----------------------------------------------------------------
     gallery: [
         {
-            image: "public/photos/photo1.jpeg",
+            image: "assets/photos/photo1.jpeg",
             caption: "Tawa pertamamu saat akhirnya kita bertemu 🌸",
             category: "First Meet"
         },
         {
-            image: "public/photos/photo2.jpeg",
+            image: "assets/photos/photo2.jpeg",
             caption: "Senyuman manis yang selalu kurindukan di layar 🥰",
             category: "Pure Happiness"
         },
         {
-            image: "public/photos/photo3.jpeg",
+            image: "assets/photos/photo3.jpeg",
             caption: "Rumah dan tempat teraman bagi hatiku 💖",
             category: "My Safe Place"
         },
         {
-            image: "public/photos/photo4.jpeg",
+            image: "assets/photos/photo4.jpeg",
             caption: "Momen berharga di kencan nyata kita 📸",
             category: "Precious Moment"
         },
         {
-            image: "public/photos/photo5.jpeg",
+            image: "assets/photos/photo5.jpeg",
             caption: "Kehangatan di setiap genggaman tanganmu 🤝",
             category: "Warmth"
         },
         {
-            image: "public/photos/photo6.jpeg",
+            image: "assets/photos/photo6.jpeg",
             caption: "Mata indahmu yang selalu membuatku jatuh cinta ✨",
             category: "Sweet Gaze"
         },
         {
-            image: "public/photos/photo7.jpeg",
+            image: "assets/photos/photo7.jpeg",
             caption: "Senyum bahagia setelah sekian lama rindu 🌟",
             category: "Reunion Joy"
         },
         {
-            image: "public/photos/photo8.jpeg",
+            image: "assets/photos/photo8.jpeg",
             caption: "Menikmati indahnya senja bersama cintaku 🌅",
             category: "Romantic Sunset"
         },
         {
-            image: "public/photos/photo9.jpeg",
+            image: "assets/photos/photo9.jpeg",
             caption: "Tak ada lagi jarak, selamanya denganmu ❤️",
             category: "Together Forever"
         }
@@ -188,22 +188,22 @@ const CONFIG = {
     // ----------------------------------------------------------------
     carousel: [
         {
-            image: "public/photos/photo1.jpeg",
+            image: "assets/photos/photo1.jpeg",
             title: "Pertemuan Pertama Yang Mengesan",
             subtitle: "Detik-detik berdebar saat melangkah menuju tempat kedatanganmu."
         },
         {
-            image: "public/photos/photo5.jpeg",
+            image: "assets/photos/photo5.jpeg",
             title: "Genggaman Tangan yang Nyata",
             subtitle: "Tak ada lagi pembatas layar, jari kita saling bertaut hangat."
         },
         {
-            image: "public/photos/photo8.jpeg",
+            image: "assets/photos/photo8.jpeg",
             title: "Menikmati Senja Tanpa Jarak",
             subtitle: "Duduk berdampingan menikmati indahnya langit bersama orang tercinta."
         },
         {
-            image: "public/photos/photo9.jpeg",
+            image: "assets/photos/photo9.jpeg",
             title: "Janji Untuk Terus Bersama",
             subtitle: "Langkah ini akan terus berlanjut hingga nanti akhir waktu."
         }
